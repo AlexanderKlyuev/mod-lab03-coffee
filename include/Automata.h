@@ -1,3 +1,5 @@
+// Copyright 2024 Alexander Klyuev
+
 #pragma once
 #include <string>
 #include <map>
