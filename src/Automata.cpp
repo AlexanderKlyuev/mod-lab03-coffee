@@ -1,3 +1,5 @@
+// Copyright 2024 Alexander Klyuev
+
 #include "Automata.h"
 
 Automata::Automata() {
@@ -55,13 +57,11 @@ Automata::STATES Automata::getState() {
 	return state;
 }
 
-int Automata::getCash()
-{
+int Automata::getCash() {
 	return cash;
 }
 
-std::string Automata::getSelectedDrink()
-{
+std::string Automata::getSelectedDrink() {
 	return selectedDrink;
 }
 
