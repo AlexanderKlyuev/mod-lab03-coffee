@@ -5,7 +5,7 @@
 #include <map>
 
 class Automata {
-public:
+ public:
 	enum STATES {
 		OFF,
 		WAIT,
@@ -25,7 +25,7 @@ public:
 	void cook();
 	Automata();
 
-private:
+ private:
 	STATES state;
 	int cash;
 	std::map<std::string, int> menu;
