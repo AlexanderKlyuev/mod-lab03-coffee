@@ -45,7 +45,7 @@ TEST(automata, cancelAccept) {
 	Automata automata;
 	automata.on();
 	automata.coin(50);
-	automata.cancel;
+	automata.cancel();
 	Automata::STATES automataState = automata.getState();
 	int automataCash = automata.getCash();
 	std::string automataSelectedDring = automata.getSelectedDrink();
@@ -59,7 +59,7 @@ TEST(automata, cancelCheck) {
 	automata.on();
 	automata.coin(50);
 	automata.choice("Tea");
-	automata.cancel;
+	automata.cancel();
 	Automata::STATES automataState = automata.getState();
 	int automataCash = automata.getCash();
 	std::string automataSelectedDring = automata.getSelectedDrink();
