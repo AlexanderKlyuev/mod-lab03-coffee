@@ -5,67 +5,67 @@
 #include "Automata.h"
 
 TEST(automata, turnOn) {
-	Automata automata;
-	automata.on();
-	Automata::STATES automataState = automata.getState();
-	EXPECT_EQ(Automata::STATES::WAIT, automataState);
+    Automata automata;
+    automata.on();
+    Automata::STATES automataState = automata.getState();
+    EXPECT_EQ(Automata::STATES::WAIT, automataState);
 }
 
 TEST(automata, turnOff) {
-	Automata automata;
-	automata.on();
-	automata.off();
-	Automata::STATES automataState = automata.getState();
-	EXPECT_EQ(Automata::STATES::OFF, automataState);
+    Automata automata;
+    automata.on();
+    automata.off();
+    Automata::STATES automataState = automata.getState();
+    EXPECT_EQ(Automata::STATES::OFF, automataState);
 }
 
 TEST(automata, insertCash) {
-	Automata automata;
-	automata.on();
-	automata.coin(10);
-	Automata::STATES automataState = automata.getState();
-	int automataCash = automata.getCash();
-	EXPECT_EQ(Automata::STATES::ACCEPT, automataState);
-	EXPECT_EQ(10, automataCash);
+    Automata automata;
+    automata.on();
+    automata.coin(10);
+    Automata::STATES automataState = automata.getState();
+    int automataCash = automata.getCash();
+    EXPECT_EQ(Automata::STATES::ACCEPT, automataState);
+    EXPECT_EQ(10, automataCash);
 }
 
 TEST(automata, buyDrink) {
-	Automata automata;
-	automata.on();
-	automata.coin(50);
-	automata.choice("Tea");
-	automata.cook();
-	Automata::STATES automataState = automata.getState();
-	int automataCash = automata.getCash();
-	EXPECT_EQ(Automata::STATES::WAIT, automataState);
-	EXPECT_EQ(10, automataCash);
+    Automata automata;
+    automata.on();
+    automata.coin(50);
+    automata.choice("Tea");
+    automata.cook();
+    Automata::STATES automataState = automata.getState();
+    int automataCash = automata.getCash();
+    EXPECT_EQ(Automata::STATES::WAIT, automataState);
+    EXPECT_EQ(10, automataCash);
 }
 
 TEST(automata, cancelAccept) {
-	Automata automata;
-	automata.on();
-	automata.coin(50);
-	automata.cancel();
-	Automata::STATES automataState = automata.getState();
-	int automataCash = automata.getCash();
-	std::string automataSelectedDring = automata.getSelectedDrink();
-	EXPECT_EQ(Automata::STATES::WAIT, automataState);
-	EXPECT_EQ(0, automataCash);
-	EXPECT_EQ("", automataSelectedDring);
+    Automata automata;
+    automata.on();
+    automata.coin(50);
+    automata.cancel();
+    Automata::STATES automataState = automata.getState();
+    int automataCash = automata.getCash();
+    std::string automataSelectedDring = automata.getSelectedDrink();
+    EXPECT_EQ(Automata::STATES::WAIT, automataState);
+    EXPECT_EQ(0, automataCash);
+    EXPECT_EQ("", automataSelectedDring);
 }
 
 TEST(automata, cancelCheck) {
-	Automata automata;
-	automata.on();
-	automata.coin(50);
-	automata.choice("Tea");
-	automata.cancel();
-	Automata::STATES automataState = automata.getState();
-	int automataCash = automata.getCash();
-	std::string automataSelectedDring = automata.getSelectedDrink();
-	EXPECT_EQ(Automata::STATES::WAIT, automataState);
-	EXPECT_EQ(0, automataCash);
-	EXPECT_EQ("", automataSelectedDring);
+    Automata automata;
+    automata.on();
+    automata.coin(50);
+    automata.choice("Tea");
+    automata.cancel();
+    Automata::STATES automataState = automata.getState();
+    int automataCash = automata.getCash();
+    std::string automataSelectedDring = automata.getSelectedDrink();
+    EXPECT_EQ(Automata::STATES::WAIT, automataState);
+    EXPECT_EQ(0, automataCash);
+    EXPECT_EQ("", automataSelectedDring);
 }
 
 TEST(automata, turnOnWhenAlreadyOn) {
